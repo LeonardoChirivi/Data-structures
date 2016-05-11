@@ -7,11 +7,9 @@ public class Node {
 	private Node right;
 	
 	public Node(int info, Node left, Node right) {
-	
 		this.info = info;
 		this.left = left;
 		this.right = right;
-		
 	}
 
 	public int getInfo() {
