@@ -199,7 +199,8 @@ public class Tree {
 		
 		if( n == null ) return 0;
 		if( n.getLeft() == null && n.getRight() == null ) return 1;
-		else if( n.getLeft() != null && n.getRight() != null ) return depthTree( n.getLeft() ) + depthTree( n.getRight() );
+		else if( n.getLeft() != null && n.getRight() != null ) return 1 + Math.max( depthTree( n.getLeft() ), 
+																					depthTree( n.getRight() ) );
 		else if( n.getLeft() == null && n.getRight() == null ) return 1 + depthTree( n.getRight() );
 		else return 1 + depthTree( n.getLeft() );
 		
