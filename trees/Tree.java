@@ -195,7 +195,7 @@ public class Tree {
 		return depthTree(root);
 	}
 	
-	public int depthTree( Node n ){
+	private int depthTree( Node n ){
 		
 		if( n == null ) return 0;
 		if( n.getLeft() == null && n.getRight() == null ) return 1;
