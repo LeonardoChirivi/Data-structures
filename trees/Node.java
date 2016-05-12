@@ -6,10 +6,10 @@ public class Node {
 	private Node left;
 	private Node right;
 	
-	public Node(int info, Node left, Node right) {
+	public Node( int info ) {
 		this.info = info;
-		this.left = left;
-		this.right = right;
+		left = null;
+		right = null;
 	}
 
 	public int getInfo() {

@@ -17,17 +17,17 @@ public class Main {
 //		tree.insert(2);
 //		tree.insert(1);
 		
-		tree.insert(25);
-		tree.insert(15);
-		tree.insert(30);
-		tree.insert(5);
-		tree.insert(20);
-		tree.insert(40);
-		tree.insert(2);
-		tree.insert(19);
-		tree.insert(21);
+//		tree.insert(25);
+//		tree.insert(15);
+//		tree.insert(30);
+//		tree.insert(5);
+//		tree.insert(20);
+//		tree.insert(40);
+//		tree.insert(2);
+//		tree.insert(19);
+//		tree.insert(21);
 //		tree.insert(22);
-		tree.insert(18);
+//		tree.insert(18);
 //		tree.insert(17);
 		
 		
@@ -47,8 +47,35 @@ public class Main {
 //		tree.insert(166);
 //		tree.insert(200);
 		
-		System.out.println( tree.depth() );
+//		System.out.println( tree.depth() );
+//		tree.inorder();
+		
+//		tree.insert(10);
+//		tree.insert(7);
+//		tree.insert(20);
+//		tree.insert(6);
+//		tree.insert(8);
+//		tree.insert(15);
+//		tree.insert(23);
+//		tree.insert(17);
+//		tree.insert(19);
+		
+		tree.insert(15);
+		tree.insert(6);
+		tree.insert(20);
+		tree.insert(5);
+		tree.insert(10);
+		tree.insert(16);
+		tree.insert(25);
+		tree.insert(8);
+		tree.insert(14);
+		tree.insert(30);
+		
 		tree.inorder();
+		System.out.println();
+		tree.preorder();
+		System.out.println();
+		tree.postorder();
 		
 	}
 	

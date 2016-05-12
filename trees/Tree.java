@@ -11,7 +11,7 @@ public class Tree {
 	public void insert( int info ){
 
 		if( root == null ){
-			root = new Node(info, null, null);
+			root = new Node(info);
 
 		} else {
 			insertTree(root, info);
@@ -24,7 +24,7 @@ public class Tree {
 		if( info <= n.getInfo() ){
 
 			if( n.getLeft() == null ){
-				n.setLeft( new Node( info, null, null ) );
+				n.setLeft( new Node( info ) );
 			} else {
 				insertTree(n.getLeft(), info);
 			}
@@ -32,7 +32,7 @@ public class Tree {
 		} else {
 
 			if( n.getRight() == null ){
-				n.setRight( new Node(info, null, null) );
+				n.setRight( new Node(info) );
 			} else {
 				insertTree(n.getRight(), info);
 			}
