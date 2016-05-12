@@ -14,19 +14,19 @@ public class Tree {
 			root = new Node(info);
 
 		} else {
-			insertTree(root, info);
+			insert(root, info);
 		}
 
 	}
 
-	private void insertTree( Node n, int info ){
+	private void insert( Node n, int info ){
 
 		if( info <= n.getInfo() ){
 
 			if( n.getLeft() == null ){
 				n.setLeft( new Node( info ) );
 			} else {
-				insertTree(n.getLeft(), info);
+				insert(n.getLeft(), info);
 			}
 
 		} else {
@@ -34,13 +34,13 @@ public class Tree {
 			if( n.getRight() == null ){
 				n.setRight( new Node(info) );
 			} else {
-				insertTree(n.getRight(), info);
+				insert(n.getRight(), info);
 			}
 		}
 
 	}
 
-	public void delete( int info ){
+	public void remove( int info ){
 		remove( root, root, info );
 	}
 
@@ -104,43 +104,43 @@ public class Tree {
 	}
 
 	public void inorder(){
-		inorderTree( root );
+		inorder( root );
 	}
 
-	private void inorderTree( Node r ){ //SRD
+	private void inorder( Node r ){ //SRD
 
 		if( r != null ){
-			inorderTree( r.getLeft() );
+			inorder( r.getLeft() );
 			System.out.print( r.getInfo()+" " );
-			inorderTree( r.getRight() );
+			inorder( r.getRight() );
 		}
 
 	}
 
 	public void postorder(){
-		postorderTree( root );
+		postorder( root );
 	}
 
-	private void postorderTree( Node r ){// SDR
+	private void postorder( Node r ){// SDR
 
 		if( r != null ){
-			postorderTree( r.getLeft() );
-			postorderTree( r.getRight() );
+			postorder( r.getLeft() );
+			postorder( r.getRight() );
 			System.out.print( r.getInfo()+" " );
 		}
 
 	}
 
 	public void preorder(){
-		preorderTree( root );
+		preorder( root );
 	}
 
-	private void preorderTree( Node r ){//RSD
+	private void preorder( Node r ){//RSD
 
 		if( r != null ){
 			System.out.print( r.getInfo()+" " );
-			preorderTree( r.getLeft() );
-			preorderTree( r.getRight() );
+			preorder( r.getLeft() );
+			preorder( r.getRight() );
 		}
 
 	}
@@ -192,17 +192,28 @@ public class Tree {
 	}
 
 	public int depth(){
-		return depthTree(root);
+		return depth(root);
 	}
 	
-	private int depthTree( Node n ){
+	private int depth( Node n ){
 		
 		if( n == null ) return 0;
 		if( n.getLeft() == null && n.getRight() == null ) return 1;
-		else if( n.getLeft() != null && n.getRight() != null ) return 1 + Math.max( depthTree( n.getLeft() ), 
-																					depthTree( n.getRight() ) );
-		else if( n.getLeft() == null && n.getRight() == null ) return 1 + depthTree( n.getRight() );
-		else return 1 + depthTree( n.getLeft() );
+		else if( n.getLeft() != null && n.getRight() != null ) return 1 + Math.max( depth( n.getLeft() ), depth( n.getRight() ) );
+		else if( n.getLeft() == null && n.getRight() == null ) return 1 + depth( n.getRight() );
+		else return 1 + depth( n.getLeft() );
+		
+	}
+
+	public int countLeaves(){
+		return countLeaves( root );
+	}
+	
+	private int countLeaves( Node n ){
+		
+		if( n == null ) return 0;
+		else if( n.getLeft() == null && n.getRight() == null ) return 1;
+		else return countLeaves( n.getLeft() ) + countLeaves( n.getRight() );
 		
 	}
 	

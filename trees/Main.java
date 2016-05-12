@@ -76,6 +76,9 @@ public class Main {
 		tree.preorder();
 		System.out.println();
 		tree.postorder();
+		System.out.println();
+		
+		System.out.println(tree.countLeaves());
 		
 	}
 	
