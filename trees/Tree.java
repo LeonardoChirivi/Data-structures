@@ -51,7 +51,7 @@ public class Tree {
 			if( current == root ){
 				root = null;
 
-				//node has noo children
+				//node has no children
 			} else if( current.getLeft() == null && current.getRight() == null ){
 
 				if( parent.getLeft() == current ){
@@ -198,10 +198,8 @@ public class Tree {
 	private int depth( Node n ){
 		
 		if( n == null ) return 0;
-		if( n.getLeft() == null && n.getRight() == null ) return 1;
-		else if( n.getLeft() != null && n.getRight() != null ) return 1 + Math.max( depth( n.getLeft() ), depth( n.getRight() ) );
-		else if( n.getLeft() == null && n.getRight() == null ) return 1 + depth( n.getRight() );
-		else return 1 + depth( n.getLeft() );
+		if( n.getLeft() == null && n.getRight() == null ) return 0;
+		else return 1 + Math.max( depth( n.getLeft() ), depth( n.getRight() ) );
 		
 	}
 
